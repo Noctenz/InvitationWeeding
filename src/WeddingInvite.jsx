@@ -159,9 +159,9 @@ export default function WeddingInvite({
         <section className="lg:col-span-1 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow">
           <div className="text-center">
             <div className="text-sm text-gray-500">Dengan penuh cinta</div>
-            <h2 className="mt-3 text-2xl font-bold">{couple.bride}</h2>
+            <h2 className="mt-3 text-2xl font-bold">Leonita</h2>
             <div className="mt-1 text-gray-500">&</div>
-            <h2 className="mt-1 text-2xl font-bold">{couple.groom}</h2>
+            <h2 className="mt-1 text-2xl font-bold">Ridho</h2>
 
             <p className="mt-4 text-sm text-gray-600">
               Tanggal: <strong>{new Date(dateISO).toLocaleString()}</strong>
