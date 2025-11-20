@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const API_URL = "https://script.google.com/macros/s/AKfycbz3id55KPQ8MkqARoJ6zoLPoFPuCqQlbAMJd13x9vMU9luRa_Lyi9BcBtg14NBn1cSLlg/exec";
+const API_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgEIy2Mp6zOeoffuQ_iVizkUKDKphK3rVXOSa6Pt0mdDJNvrOSNZIEP3bICLzH5u4UzPxV2QW-LFvcvXFlG9shrEUnWsy0wdktwCZ-QnUHG5SzjaYUIxcq5u9l4pToCBC75e74r3lxfy2_mjRpIqfvY4mAkWMBdm6Ymw3wvmdXrVYRbFCfkMUtDrD7Bangs6z6xNfWa_BjJXh3F44O5ZhrOQASEO0i2E65lwryfCQpqdqnObBB4iLajWtk_qX2GwV0ZeSmVkIu5SDeKfnW8NVEm3fmYscGGBVFKb7uj&lib=MQZimxXEDnr6oCVh4_k1NmWl_CXXgBMN4";
 
 export default function WeddingInvite({
   couple = { bride: "Leonita", groom: "Ridho" },
@@ -46,13 +46,9 @@ export default function WeddingInvite({
   async function loadMessages(signal) {
     try {
       setLoading(true);
-      const res = await fetch(API_URL, { method: "GET", signal });
-      if (!res.ok) throw new Error("Gagal mengambil pesan");
+      const res = await fetch(API_URL);
       const data = await res.json();
-      // Apps Script returns array of {name, text, createdAt}
-      // Pastikan terurut terbaru di atas:
-      const arr = Array.isArray(data) ? data.slice().reverse() : [];
-      setMessages(arr);
+      setMessages(data.reverse());
     } catch (e) {
       if (e.name !== "AbortError") {
         console.error("Load messages error:", e);
@@ -91,6 +87,7 @@ export default function WeddingInvite({
       setSending(true);
       const res = await fetch(API_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
