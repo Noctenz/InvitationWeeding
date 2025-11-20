@@ -7,69 +7,59 @@ export default function EnvelopeOpening({ onDone }) {
   function handleOpen() {
     setOpened(true);
 
-    // Play music safely
     const audio = document.getElementById("weddingMusic");
     if (audio) {
       audio.volume = 1;
       audio.currentTime = 0;
-
-      // browser-safe play
       audio.play().catch(() => {
         console.log("Autoplay diblokir, memerlukan interaksi tambahan.");
       });
     }
 
-    // Delay masuk ke page utama
-    setTimeout(() => {
-      onDone();
-    }, 1200);
+    // Delay sedikit supaya animasi keluar kelihatan
+    setTimeout(() => onDone(), 600);
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#fbe8ef]">
-      <AnimatePresence>
-        {!opened && (
-          <motion.div
-            initial={{ scale: 0.7, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="cursor-pointer select-none"
-            onClick={handleOpen}
-          >
-            {/* Envelope Box */}
-            <div className="w-64 h-48 relative">
-              {/* Back */}
-              <div className="absolute inset-0 bg-pink-200 rounded-lg shadow-xl"></div>
+    <AnimatePresence>
+      {!opened && (
+        <motion.div
+          key="envelope"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.5 } }}
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
+          style={{ backgroundImage: "url('./foto.jpg')" }}
+        >
+          <div className="bg-black bg-opacity-30 w-full h-full absolute inset-0"></div>
+          <div className="relative z-10 text-center text-white max-w-sm p-6">
+            <h1 className="text-4xl font-sourGummy font-black mb-2">
+              Wedding Invitation
+            </h1>
+            <p className="text-sm mb-4">We invited you to celebrate our wedding</p>
+            <h2 className="text-6xl font-luxurious italic leading-[0.8]">Leonita</h2>
+            <h2 className="text-6xl font-luxurious italic leading-[0.8]">&</h2>
+            <h2 className="text-6xl font-luxurious italic leading-[0.8]">Ridho</h2>
+            <p className="text-sm mb-6">Saturday, 27 December 2025</p>
 
-              {/* Top Flap */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-1/2 bg-pink-300 rounded-t-lg origin-top"
-                initial={{ rotateX: 0 }}
-                animate={opened ? { rotateX: -180 } : { rotateX: 0 }}
-                transition={{ duration: 0.9, ease: "easeInOut" }}
-              ></motion.div>
+            <button
+              onClick={handleOpen}
+              className="relative px-8 py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white font-semibold hover:bg-white/30 transition duration-300"
+            >
+              Open
+            </button>
+          </div>
 
-              {/* Bottom Flap */}
-              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-pink-400 rounded-b-lg"></div>
-            </div>
-
-            <p className="text-center mt-4 text-gray-700 font-semibold">
-              Buka Undangan
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Hidden audio */}
-      <audio
-        id="weddingMusic"
-        src="/music.mp3"
-        preload="auto"
-        playsInLine
-        controls={false}
-        style={{ display: "none" }}
-      />
-    </div>
+          <audio
+            id="weddingMusic"
+            src="/music.mp3"
+            preload="auto"
+            playsInline
+            controls={false}
+            style={{ display: "none" }}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

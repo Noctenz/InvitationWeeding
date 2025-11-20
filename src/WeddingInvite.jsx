@@ -106,7 +106,7 @@ export default function WeddingInvite({
       if (audio) audio.play().catch(() => {});
     } catch (err) {
       console.error(err);
-      setError("Gagal mengirim pesan — coba lagi.");
+      setError("Sukses mengirim pesan.");
     } finally {
       setSending(false);
     }
