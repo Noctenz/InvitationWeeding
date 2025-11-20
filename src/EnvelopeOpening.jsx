@@ -33,7 +33,7 @@ export default function EnvelopeOpening({ onDone }) {
         >
           <div className="bg-black bg-opacity-30 w-full h-full absolute inset-0"></div>
           <div className="relative z-10 text-center text-white max-w-full p-6">
-            <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-5xl font-poppins font-bold mb-2 w-full text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-poppins font-bold mb-2 w-full text-center">
               Wedding Invitation
             </h1>
             <p className="text-sm font-poppins font-normal mb-4">We invited you to celebrate our wedding</p>

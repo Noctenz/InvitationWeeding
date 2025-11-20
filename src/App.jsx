@@ -38,7 +38,7 @@ export default function App() {
           exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
         >
           <WeddingInvite
-            couple={{ bride: "Nama Wanita", groom: "Nama Pria" }}
+            couple={{ bride: "Leonita", groom: "Ridho" }}
           />
         </motion.div>
       )}
