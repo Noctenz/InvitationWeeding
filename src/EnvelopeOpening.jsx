@@ -32,22 +32,25 @@ export default function EnvelopeOpening({ onDone }) {
           style={{ backgroundImage: "url('./foto.jpg')" }}
         >
           <div className="bg-black bg-opacity-30 w-full h-full absolute inset-0"></div>
-          <div className="relative z-10 text-center text-white max-w-sm p-6">
-            <h1 className="text-4xl font-sourGummy font-black mb-2">
+          <div className="relative z-10 text-center text-white max-w-full p-6">
+            <h1 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-poppins font-bold mb-2 w-full text-center">
               Wedding Invitation
             </h1>
-            <p className="text-sm mb-4">We invited you to celebrate our wedding</p>
-            <h2 className="text-6xl font-luxurious italic leading-[0.8]">Leonita</h2>
-            <h2 className="text-6xl font-luxurious italic leading-[0.8]">&</h2>
-            <h2 className="text-6xl font-luxurious italic leading-[0.8]">Ridho</h2>
-            <p className="text-sm mb-6">Saturday, 27 December 2025</p>
+            <p className="text-sm font-poppins font-normal mb-4">We invited you to celebrate our wedding</p>
+            <h2 className="text-8xl font-luxurious italic leading-[0.8]">Leonita</h2>
+            <h2 className="text-8xl font-luxurious italic leading-[0.8]">&</h2>
+            <h2 className="text-8xl font-luxurious italic leading-[0.8]">Ridho</h2>
+            <p className="text-sm font-poppins font-normal mb-7">Saturday, 27 December 2025</p>
 
             <button
               onClick={handleOpen}
-              className="relative px-8 py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white font-semibold hover:bg-white/30 transition duration-300"
+              className="relative px-8 py-3 mb-10 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 shadow-lg text-white font-semibold hover:bg-white/30 transition duration-300"
             >
               Open
             </button>
+            <div className="text-sm font-poppins font-normal">
+            © 2025 Sovereign Studio. All rights reserved – Made by @mhmdshandiakbar
+            </div>
           </div>
 
           <audio

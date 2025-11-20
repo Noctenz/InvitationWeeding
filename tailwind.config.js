@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         luxurious: ['"Luxurious Script"', 'cursive'],
         sourGummy: ['"Sour Gummy"', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
