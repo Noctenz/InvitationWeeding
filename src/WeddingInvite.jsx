@@ -324,7 +324,7 @@ export default function WeddingInvite({
       </main>
 
       <footer className="text-center p-6 text-sm text-gray-500">
-        Made with ❤️ — Ubah teks, tanggal, dan lokasi sesuai kebutuhan.
+        © 2025 Sovereign Studio. All rights reserved – Made by @mhmdshandiakbar
       </footer>
     </div>
   );
