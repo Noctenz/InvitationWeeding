@@ -29,7 +29,7 @@ export default function EnvelopeOpening({ onDone }) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.5 } }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
-          style={{ backgroundImage: "url('./foto.jpg')" }}
+          style={{ backgroundImage: "url('./undangan.svg')" }}
         >
           <div className="bg-black bg-opacity-30 w-full h-full absolute inset-0"></div>
           <div className="relative z-10 text-center text-white max-w-full p-6">

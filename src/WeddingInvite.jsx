@@ -143,7 +143,7 @@ export default function WeddingInvite({
               transition={{ duration: 0.8, type: "spring" }}
               className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-6 bg-white-500 text-white rounded-full shadow-lg z-50 flex items-center justify-center"
             >
-              🎵 Music Playing...
+              <img src="/undangan.gif" alt="Music Popup" className="w-64 h-64 object-cover rounded-2xl shadow-lg" />
             </motion.div>
           </>
         )}
@@ -291,7 +291,7 @@ export default function WeddingInvite({
         {/* Map */}
         <section className="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow">
           <h4 className="font-semibold">Lokasi Acara</h4>
-          <p className="text-sm text-gray-500">{mapQuery}</p>
+          <p className="text-sm text-gray-500">{mapQuery} - Jln.Gelatik Perumnas Puri Intan Tulung Mili Blok B, No.8</p>
           <div className="mt-4 w-full aspect-video rounded-lg overflow-hidden border">
             <iframe
               title="google-map"
